@@ -81,6 +81,70 @@ public class Barang extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, err.getMessage());
     }
     }
+    
+    public void reset(){
+    idruangan = "";
+    namaruangan = "";
+    lokasi = "";
+    keterangan = "";
+    
+    a.setText(idruangan);
+    b.setText(namaruangan);
+    c.setText(lokasi);
+    d.setText(keterangan);
+    
+    }
+    
+    public void selectData(){
+        int i = tabel.getSelectedRow();
+        if (i == -1){
+            //tidak ada baris terpilih
+            return ;
+        }
+        a.setText(""+model.getValueAt(i, 0));
+        b.setText(""+model.getValueAt(i, 1));
+        c.setText(""+model.getValueAt(i, 2));
+        d.setText(""+model.getValueAt(i, 3));
+    }
+    /*
+    
+    public void selectData(){
+       int i = tabel.getSelectedRow();
+       if (i == -1){
+            //tidak ada baris terpilih
+            return ;
+       }
+       a.setText(""+model.getValueAt(i, 0));
+       b.setText(""+model.getValueAt(i, 1));
+       c.setText(""+model.getValueAt(i, 2));
+       d.setText(""+model.getValueAt(i, 3));
+    }
+    
+    public void delete(){
+        
+    //menampilkan pesan konfirmasi OK dan Cancel sebelum dilakukan proses delete
+    int pesan = JOptionPane.showConfirmDialog(null, "Anda yakin menghapus data"+idruangan+"?","konfimasi",
+            JOptionPane.OK_CANCEL_OPTION);
+    
+    //jika user memilih OK maka proses Delete akan dilakukan
+    if(pesan == JOptionPane.OK_CANCEL_OPTION){
+    try{
+        Statement stat = (Statement) Connect.getConnect().createStatement();
+        String sql = "DELETE FROM gaji WHERE idruangan = '"+idruangan+"'";
+        PreparedStatement p = (PreparedStatement) Connect.getConnect().prepareStatement(sql);
+        p.executeUpdate();
+        getData();
+        reset();
+        JOptionPane.showMessageDialog(null, "Delete berhasil");
+    }catch (SQLException er){
+        JOptionPane.showMessageDialog(null, er.getMessage());
+    }
+    }
+}
+    */
+    public void update(){
+    
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -91,41 +155,28 @@ public class Barang extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tabel = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         a = new javax.swing.JTextField();
         b = new javax.swing.JTextField();
         c = new javax.swing.JTextField();
         d = new javax.swing.JTextField();
         simpan = new javax.swing.JButton();
-        kembali = new javax.swing.JButton();
         Reset = new javax.swing.JButton();
+        kembali = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabel = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        tabel.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(tabel);
-
-        jLabel1.setText("ID Ruangan");
-
         jLabel2.setText("Nama Ruangan");
 
         jLabel3.setText("Lokasi");
+
+        jLabel1.setText("ID Ruangan");
 
         jLabel4.setText("Keterangan");
 
@@ -148,20 +199,44 @@ public class Barang extends javax.swing.JFrame {
             }
         });
 
-        kembali.setText("Kembali");
-
         Reset.setText("Reset");
+        Reset.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ResetMouseClicked(evt);
+            }
+        });
+        Reset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResetActionPerformed(evt);
+            }
+        });
+
+        kembali.setText("Kembali");
+        kembali.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kembaliActionPerformed(evt);
+            }
+        });
+
+        tabel.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tabel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(kembali))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,18 +244,24 @@ public class Barang extends javax.swing.JFrame {
                                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(simpan)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(46, 46, 46)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(b, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
-                            .addComponent(c)
-                            .addComponent(a)
-                            .addComponent(d))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(simpan, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Reset, javax.swing.GroupLayout.Alignment.TRAILING))))
-                .addGap(28, 28, 28))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(b, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+                                .addComponent(c)
+                                .addComponent(a)
+                                .addComponent(d))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(35, 35, 35)
+                                .addComponent(kembali))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -188,25 +269,26 @@ public class Barang extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(simpan))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(c, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Reset))
+                    .addComponent(c, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(d, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(8, 8, 8)
-                .addComponent(kembali)
-                .addGap(31, 31, 31)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(simpan)
+                    .addComponent(Reset)
+                    .addComponent(kembali))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -225,6 +307,20 @@ public class Barang extends javax.swing.JFrame {
         // TODO add your handling code here:
         saveData();
     }//GEN-LAST:event_simpanActionPerformed
+
+    private void ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetActionPerformed
+           // TODO add your handling code here:
+        reset();
+    }//GEN-LAST:event_ResetActionPerformed
+
+    private void ResetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResetMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ResetMouseClicked
+
+    private void kembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kembaliActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_kembaliActionPerformed
 
     /**
      * @param args the command line arguments
