@@ -5,7 +5,8 @@
  */
 package tubespbo;
 
-
+//import Barang.Barang;
+import tubespbo.Kelolaruangan;
 
 /**
  *
@@ -30,116 +31,76 @@ public class Menuadmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        Ruangan = new javax.swing.JButton();
-        Peminjaman = new javax.swing.JButton();
-        Laporan = new javax.swing.JButton();
-        Logout = new javax.swing.JButton();
-        pengembalian = new javax.swing.JButton();
+        ruangan = new javax.swing.JButton();
+        pinjam = new javax.swing.JButton();
+        laporan = new javax.swing.JButton();
+        keluar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(112, 128, 144));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        Ruangan.setBackground(new java.awt.Color(255, 255, 255));
-        Ruangan.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        Ruangan.setText("KELOLA DATA RUANGAN");
-        Ruangan.addActionListener(new java.awt.event.ActionListener() {
+        ruangan.setText("Kelola Ruangan");
+        ruangan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RuanganActionPerformed(evt);
+                ruanganActionPerformed(evt);
             }
         });
-        jPanel1.add(Ruangan, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 268, 50));
 
-        Peminjaman.setBackground(new java.awt.Color(255, 255, 255));
-        Peminjaman.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        Peminjaman.setText("KELOLA PEMINJAMAN");
-        Peminjaman.addActionListener(new java.awt.event.ActionListener() {
+        pinjam.setText("Kelola Pinjaman");
+
+        laporan.setText("Laporan");
+
+        keluar.setText("Logout");
+        keluar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PeminjamanActionPerformed(evt);
+                keluarActionPerformed(evt);
             }
         });
-        jPanel1.add(Peminjaman, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 268, 50));
-
-        Laporan.setBackground(new java.awt.Color(255, 255, 255));
-        Laporan.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        Laporan.setText("LAPORAN PEMINJAMAN");
-        Laporan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LaporanActionPerformed(evt);
-            }
-        });
-        jPanel1.add(Laporan, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 268, 50));
-
-        Logout.setBackground(new java.awt.Color(255, 255, 255));
-        Logout.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        Logout.setText("Logout");
-        Logout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LogoutActionPerformed(evt);
-            }
-        });
-        jPanel1.add(Logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 320, -1, -1));
-
-        pengembalian.setBackground(new java.awt.Color(255, 255, 255));
-        pengembalian.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        pengembalian.setText("KELOLA PENGEMBALIAN");
-        pengembalian.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pengembalianActionPerformed(evt);
-            }
-        });
-        jPanel1.add(pengembalian, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 270, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 628, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 628, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(keluar)
+                .addGap(20, 20, 20))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(laporan)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(pinjam, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ruangan, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(241, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 388, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(ruangan)
+                .addGap(26, 26, 26)
+                .addComponent(pinjam)
+                .addGap(26, 26, 26)
+                .addComponent(laporan)
+                .addGap(20, 20, 20)
+                .addComponent(keluar)
+                .addContainerGap(109, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void RuanganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RuanganActionPerformed
+    private void ruanganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ruanganActionPerformed
         // TODO add your handling code here:
-      KelolaDataRuang kel = new KelolaDataRuang();
+      Kelolaruangan kel = new Kelolaruangan();
       kel.setVisible(true);
-    }//GEN-LAST:event_RuanganActionPerformed
+    }//GEN-LAST:event_ruanganActionPerformed
 
-    private void PeminjamanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PeminjamanActionPerformed
+    private void keluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keluarActionPerformed
         // TODO add your handling code here:
-         KelolaPeminjaman pem = new KelolaPeminjaman();
-         pem.setVisible(true);
-    }//GEN-LAST:event_PeminjamanActionPerformed
-
-    private void LaporanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LaporanActionPerformed
-        // TODO add your handling code here:
-         Laporan lap = new Laporan ();
-         lap.setVisible(true);
-    }//GEN-LAST:event_LaporanActionPerformed
-
-    private void LogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutActionPerformed
-        // TODO add your handling code here:
-          dispose();
-        new Menulogin().show();
-    }//GEN-LAST:event_LogoutActionPerformed
-
-    private void pengembalianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pengembalianActionPerformed
-        // TODO add your handling code here:
-        Kembali kmbl = new Kembali ();
-         kmbl.setVisible(true);
-    }//GEN-LAST:event_pengembalianActionPerformed
+        dispose();
+    }//GEN-LAST:event_keluarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -177,11 +138,9 @@ public class Menuadmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Laporan;
-    private javax.swing.JButton Logout;
-    private javax.swing.JButton Peminjaman;
-    private javax.swing.JButton Ruangan;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton pengembalian;
+    private javax.swing.JButton keluar;
+    private javax.swing.JButton laporan;
+    private javax.swing.JButton pinjam;
+    private javax.swing.JButton ruangan;
     // End of variables declaration//GEN-END:variables
 }

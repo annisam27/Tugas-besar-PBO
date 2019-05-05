@@ -5,7 +5,8 @@
  */
 package tubespbo;
 
-import Barang.Barang;
+//import Barang.Barang;
+import tubespbo.Kelolaruangan;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
