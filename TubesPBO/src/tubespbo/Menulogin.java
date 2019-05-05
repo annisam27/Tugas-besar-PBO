@@ -5,9 +5,10 @@
  */
 package tubespbo;
 
+
 /**
  *
- * @author LATHNETBOOK
+ * @author lenovo
  */
 public class Menulogin extends javax.swing.JFrame {
 
@@ -17,6 +18,7 @@ public class Menulogin extends javax.swing.JFrame {
     public Menulogin() {
         initComponents();
         setLocationRelativeTo(null);
+       
     }
 
     /**
@@ -28,92 +30,130 @@ public class Menulogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenu1 = new javax.swing.JMenu();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        admin = new javax.swing.JButton();
-        keluar = new javax.swing.JButton();
-        peminjam = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        loginadmin = new javax.swing.JButton();
+        loginpeminjam = new javax.swing.JButton();
+        logout = new javax.swing.JButton();
+
+        jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
 
-        jLabel1.setText("Login Kategori");
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\lenovo\\Desktop\\untuk app.PNG")); // NOI18N
+        jLabel2.setText("jLabel2");
 
-        admin.setText("Login sebagai Admin");
-        admin.addActionListener(new java.awt.event.ActionListener() {
+        jPanel2.setBackground(new java.awt.Color(153, 153, 255));
+
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Sistem Peminjaman Ruangan");
+
+        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Institut Teknologi Sumatera");
+
+        loginadmin.setBackground(new java.awt.Color(255, 255, 255));
+        loginadmin.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        loginadmin.setText("Login Admin");
+        loginadmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adminActionPerformed(evt);
+                loginadminActionPerformed(evt);
             }
         });
 
-        keluar.setText("Logout");
-        keluar.addActionListener(new java.awt.event.ActionListener() {
+        loginpeminjam.setBackground(new java.awt.Color(255, 255, 255));
+        loginpeminjam.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        loginpeminjam.setText("Login Peminjam");
+        loginpeminjam.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                keluarActionPerformed(evt);
+                loginpeminjamActionPerformed(evt);
             }
         });
 
-        peminjam.setText("Login sebagai Peminjam");
-        peminjam.addActionListener(new java.awt.event.ActionListener() {
+        logout.setBackground(new java.awt.Color(255, 255, 255));
+        logout.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        logout.setText("Logout");
+        logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                peminjamActionPerformed(evt);
+                logoutActionPerformed(evt);
             }
         });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(loginadmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(loginpeminjam, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(logout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(38, 38, 38))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(7, 7, 7)
+                        .addComponent(jLabel3))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(loginadmin)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(loginpeminjam)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(logout)))
+                .addContainerGap(56, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(peminjam, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(admin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(161, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(145, 145, 145))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(keluar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35))))
+            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 735, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(admin)
-                .addGap(18, 18, 18)
-                .addComponent(peminjam)
-                .addGap(55, 55, 55)
-                .addComponent(keluar)
-                .addContainerGap(68, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminActionPerformed
+    private void loginadminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginadminActionPerformed
         // TODO add your handling code here:
         dispose();
         Loginlog log = new Loginlog();
         log.setVisible(true);
-    }//GEN-LAST:event_adminActionPerformed
+    }//GEN-LAST:event_loginadminActionPerformed
 
-    private void keluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keluarActionPerformed
-        // TODO add your handling code here:
-        dispose();
-    }//GEN-LAST:event_keluarActionPerformed
-
-    private void peminjamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_peminjamActionPerformed
+    private void loginpeminjamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginpeminjamActionPerformed
         // TODO add your handling code here:
         dispose();
         login gin = new login();
         gin.setVisible(true);
-    }//GEN-LAST:event_peminjamActionPerformed
+    }//GEN-LAST:event_loginpeminjamActionPerformed
+
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
+        // TODO add your handling code here:
+         dispose();
+    }//GEN-LAST:event_logoutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -151,9 +191,13 @@ public class Menulogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton admin;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JButton keluar;
-    private javax.swing.JButton peminjam;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton loginadmin;
+    private javax.swing.JButton loginpeminjam;
+    private javax.swing.JButton logout;
     // End of variables declaration//GEN-END:variables
 }

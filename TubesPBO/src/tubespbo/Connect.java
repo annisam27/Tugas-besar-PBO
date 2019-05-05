@@ -4,16 +4,14 @@
  * and open the template in the editor.
  */
 package tubespbo;
-
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Driver;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-
 /**
  *
- * @author LATHNETBOOK
+ * @author lenovo
  */
 public class Connect {
     private static Connection conn;

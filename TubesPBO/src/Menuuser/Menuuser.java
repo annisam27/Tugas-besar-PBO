@@ -5,11 +5,10 @@
  */
 package Menuuser;
 import Pinjaman.Pinjaman;
-
-
+import Pinjaman.lihatruangan;
 /**
  *
- * @author LATHNETBOOK
+ * @author lenovo
  */
 public class Menuuser extends javax.swing.JFrame {
 
@@ -30,15 +29,51 @@ public class Menuuser extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        cari = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        lihat = new javax.swing.JButton();
         pinjam = new javax.swing.JButton();
         logout = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu2 = new javax.swing.JMenu();
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
 
-        cari.setText("Cari");
+        jPanel5.setBackground(new java.awt.Color(51, 153, 255));
 
+        lihat.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lihat.setText("Lihat");
+        lihat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lihatActionPerformed(evt);
+            }
+        });
+
+        pinjam.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         pinjam.setText("Pinjam");
         pinjam.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -46,51 +81,83 @@ public class Menuuser extends javax.swing.JFrame {
             }
         });
 
-        logout.setText("logout");
+        logout.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        logout.setText("Logout");
         logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logoutActionPerformed(evt);
             }
         });
 
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addComponent(lihat, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(128, 128, 128)
+                .addComponent(pinjam)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(logout)
+                .addGap(44, 44, 44))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(27, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(pinjam)
+                    .addComponent(lihat)
+                    .addComponent(logout))
+                .addGap(19, 19, 19))
+        );
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\lenovo\\Desktop\\user.PNG")); // NOI18N
+
+        jMenuBar2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        jMenu2.setText("DASHBOARD PEMINJAM");
+        jMenu2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jMenuBar2.add(jMenu2);
+
+        setJMenuBar(jMenuBar2);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(cari)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
-                .addComponent(pinjam)
-                .addGap(73, 73, 73)
-                .addComponent(logout)
-                .addGap(39, 39, 39))
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cari)
-                    .addComponent(pinjam)
-                    .addComponent(logout))
-                .addContainerGap(266, Short.MAX_VALUE))
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void pinjamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pinjamActionPerformed
+    private void lihatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatActionPerformed
         // TODO add your handling code here:
         dispose();
+       lihatruangan ruang = new lihatruangan();
+      ruang.setVisible(true);
+    }//GEN-LAST:event_lihatActionPerformed
+
+    private void pinjamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pinjamActionPerformed
+        // TODO add your handling code here:
+         dispose();
        Pinjaman pin = new Pinjaman();
       pin.setVisible(true);
-        
     }//GEN-LAST:event_pinjamActionPerformed
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         // TODO add your handling code here:
-        dispose();
+          dispose();
     }//GEN-LAST:event_logoutActionPerformed
 
     /**
@@ -129,7 +196,13 @@ public class Menuuser extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton cari;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JButton lihat;
     private javax.swing.JButton logout;
     private javax.swing.JButton pinjam;
     // End of variables declaration//GEN-END:variables
