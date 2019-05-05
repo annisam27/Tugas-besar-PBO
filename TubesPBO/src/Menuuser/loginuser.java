@@ -9,6 +9,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import tubespbo.Connect;
+import tubespbo.Menulogin;
+import Menuuser.Menuuser;
 
 
 /**
@@ -95,7 +97,7 @@ public class loginuser extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
         );
 
         pack();
@@ -129,6 +131,7 @@ public class loginuser extends javax.swing.JFrame {
     private void kembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kembaliActionPerformed
         // TODO add your handling code here:
           dispose();  
+          new Menulogin().show();
     }//GEN-LAST:event_kembaliActionPerformed
 
     /**
