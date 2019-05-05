@@ -24,7 +24,7 @@ public class Laporan extends javax.swing.JFrame {
         
         model = new DefaultTableModel();
         tabel.setModel(model);
-        model.addColumn("ID uangan");
+        model.addColumn("ID Ruangan");
         model.addColumn("Nama Ruangan");
         model.addColumn("Lokasi");
         model.addColumn("Keterangan");
