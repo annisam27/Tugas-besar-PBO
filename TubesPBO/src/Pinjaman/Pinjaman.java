@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import Menuuser.Menuuser;
 /**
  *
  * @author LATHNETBOOK
@@ -355,7 +356,9 @@ public class Pinjaman extends javax.swing.JFrame {
 
     private void kembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kembaliActionPerformed
         // TODO add your handling code here:
-        this.dispose();
+        dispose();
+        Menuuser use = new Menuuser();
+        use.setVisible(true);        
     }//GEN-LAST:event_kembaliActionPerformed
 
     private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed

@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package Menuuser;
+import Pinjaman.Pinjaman;
+
 
 /**
  *
@@ -38,8 +40,18 @@ public class Menuuser extends javax.swing.JFrame {
         cari.setText("Cari");
 
         pinjam.setText("Pinjam");
+        pinjam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pinjamActionPerformed(evt);
+            }
+        });
 
         logout.setText("logout");
+        logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -67,6 +79,19 @@ public class Menuuser extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void pinjamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pinjamActionPerformed
+        // TODO add your handling code here:
+        dispose();
+       Pinjaman pin = new Pinjaman();
+      pin.setVisible(true);
+        
+    }//GEN-LAST:event_pinjamActionPerformed
+
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_logoutActionPerformed
 
     /**
      * @param args the command line arguments
