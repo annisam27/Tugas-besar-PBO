@@ -6,6 +6,14 @@
 package Pinjaman;
 
 import Menuuser.Menuuser;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import tubespbo.Connect;
+import tubespbo.Kelolaruangan;
 
 /**
  *
@@ -16,10 +24,41 @@ public class lihatruangan extends javax.swing.JFrame {
     /**
      * Creates new form lihatruangan
      */
+   private DefaultTableModel model;
+    String idruangan, namaruangan, lokasi, keterangan;
     public lihatruangan() {
         initComponents();
+        model = new DefaultTableModel();
+        tabel.setModel(model);
+        model.addColumn("ID Ruangan");
+        model.addColumn("Nama Ruangan");
+        model.addColumn("Lokasi");
+        model.addColumn("Keterangan");
+        loadData();
     }
 
+    public void loadData(){
+      model.getDataVector().removeAllElements();
+        model.fireTableDataChanged();
+      try{
+        Statement stat = (Statement) Connect.getConnect().createStatement();
+        String sql = "Select * From peminjaman";
+          ResultSet res = stat.executeQuery(sql);
+        
+          while(res.next()){
+            Object[] obj = new Object[3];
+            obj[0] = res.getString("idruangan");
+            obj[1] = res.getString("namaruangan");
+            obj[2] = res.getString("lokasi");
+            obj[3] = res.getString("keterangan");
+                
+            model.addRow(obj);
+          }    
+    } catch(SQLException err){
+        JOptionPane.showMessageDialog(null, err.getMessage());
+    }
+     
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
