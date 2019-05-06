@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2019 at 06:52 AM
+-- Generation Time: May 06, 2019 at 06:57 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -25,18 +25,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
---
-
-CREATE TABLE `admin` (
-  `keloladataruangan` varchar(15) NOT NULL,
-  `kelolapinjaman` varchar(15) NOT NULL,
-  `laporan` varchar(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `daftar2`
 --
 
@@ -50,9 +38,26 @@ CREATE TABLE `daftar2` (
 --
 
 INSERT INTO `daftar2` (`Username`, `Password`) VALUES
-('admin', 'admin'),
 ('mhs123', 'mhs123'),
 ('dosen1', 'dosen1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `daftaradmin`
+--
+
+CREATE TABLE `daftaradmin` (
+  `username` varchar(15) NOT NULL,
+  `password` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `daftaradmin`
+--
+
+INSERT INTO `daftaradmin` (`username`, `password`) VALUES
+('admin', 'admin');
 
 -- --------------------------------------------------------
 

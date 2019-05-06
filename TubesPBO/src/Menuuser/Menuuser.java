@@ -113,7 +113,7 @@ public class Menuuser extends javax.swing.JFrame {
                 .addGap(19, 19, 19))
         );
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\lenovo\\Desktop\\user.PNG")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Menuuser/user.PNG"))); // NOI18N
 
         jMenuBar2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
