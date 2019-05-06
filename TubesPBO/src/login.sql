@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2019 at 06:27 AM
+-- Generation Time: May 06, 2019 at 06:52 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -42,17 +42,17 @@ CREATE TABLE `admin` (
 
 CREATE TABLE `daftar2` (
   `Username` varchar(15) NOT NULL,
-  `Password` varchar(10) NOT NULL,
-  `kategori` varchar(15) NOT NULL
+  `Password` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `daftar2`
 --
 
-INSERT INTO `daftar2` (`Username`, `Password`, `kategori`) VALUES
-('admin', 'admin', ''),
-('14117071', '313131', '');
+INSERT INTO `daftar2` (`Username`, `Password`) VALUES
+('admin', 'admin'),
+('mhs123', 'mhs123'),
+('dosen1', 'dosen1');
 
 -- --------------------------------------------------------
 
