@@ -4,6 +4,10 @@
  * and open the template in the editor.
  */
 package tubespbo;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -15,27 +19,50 @@ public class Laporan extends javax.swing.JFrame {
     /**
      * Creates new form Laporan
      */
-   private DefaultTableModel model;
-    String idruangan, namaruangan, lokasi, keterangan;
+    private DefaultTableModel model;
+    String idpeminjam,namapeminjam,tanggalpinjam,tanggalkembali,idruang,namaruang;
     public Laporan() {
         initComponents();
         setLocationRelativeTo(null);
         
         model = new DefaultTableModel();
         tabel.setModel(model);
-        model.addColumn("ID Ruangan");
-        model.addColumn("Nama Ruangan");
-        model.addColumn("Lokasi");
-        model.addColumn("Keterangan");
+        model.addColumn("ID Peminjam");
+        model.addColumn("Nama Peminjam");
+        model.addColumn("Tanggal Pinjam");
+        model.addColumn("Tanggal Kembali");
+        model.addColumn("ID Ruang");
+        model.addColumn("Nama Ruang");
         
-        loadData();
+        getData();
         
     }
     
-    public void loadData(){
+    public void getData(){
+    model.getDataVector().removeAllElements();
+        model.fireTableDataChanged();
+        
+        try{
+            Statement stat = (Statement) Connect.getConnect().createStatement();
+            String sql ="Select * from peminjaman";
+            ResultSet res = stat.executeQuery(sql);
+            
+            while(res.next()){
+                Object[] obj = new Object[6];
+                obj[0] = res.getString("idpeminjam");
+                obj[1] = res.getString("namapeminjam");
+                obj[2] = res.getString("tanggalpinjam");
+                obj[3] = res.getString("tanggalkembali");
+                obj[4] = res.getString("idruang");
+                obj[5] = res.getString("namaruang");
+                
+                model.addRow(obj);
+            }
+        }catch (SQLException err){
+            JOptionPane.showMessageDialog(null, err.getMessage());
+        }
     
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.

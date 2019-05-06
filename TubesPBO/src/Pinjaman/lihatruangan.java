@@ -34,30 +34,31 @@ public class lihatruangan extends javax.swing.JFrame {
         model.addColumn("Nama Ruangan");
         model.addColumn("Lokasi");
         model.addColumn("Keterangan");
-        loadData();
+        getData();
     }
 
-    public void loadData(){
-      model.getDataVector().removeAllElements();
+    public void getData(){
+        model.getDataVector().removeAllElements();
         model.fireTableDataChanged();
-      try{
-        Statement stat = (Statement) Connect.getConnect().createStatement();
-        String sql = "Select * From peminjaman";
-          ResultSet res = stat.executeQuery(sql);
         
-          while(res.next()){
-            Object[] obj = new Object[3];
-            obj[0] = res.getString("idruangan");
-            obj[1] = res.getString("namaruangan");
-            obj[2] = res.getString("lokasi");
-            obj[3] = res.getString("keterangan");
+        try{
+            Statement stat = (Statement) Connect.getConnect().createStatement();
+            String sql ="Select * from datarruangan";
+            ResultSet res = stat.executeQuery(sql);
+            
+            while(res.next()){
+                Object[] obj = new Object[4];
+                obj[0] = res.getString("idruangan");
+                obj[1] = res.getString("namaruangan");
+                obj[2] = res.getString("lokasi");
+                obj[3] = res.getString("keterangan");
                 
-            model.addRow(obj);
-          }    
-    } catch(SQLException err){
-        JOptionPane.showMessageDialog(null, err.getMessage());
-    }
-     
+                model.addRow(obj);
+            }
+        }catch (SQLException err){
+            JOptionPane.showMessageDialog(null, err.getMessage());
+        }
+    
     }
     /**
      * This method is called from within the constructor to initialize the form.

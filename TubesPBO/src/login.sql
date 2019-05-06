@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.8.5
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 04, 2019 at 11:29 PM
--- Server version: 10.1.9-MariaDB
--- PHP Version: 7.0.0
+-- Generation Time: May 06, 2019 at 06:27 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -80,13 +82,14 @@ INSERT INTO `datarruangan` (`idruangan`, `namaruangan`, `lokasi`, `keterangan`) 
 --
 
 CREATE TABLE `peminjaman` (
-  `noregistrasi` varchar(15) NOT NULL,
+  `idpeminjam` varchar(15) NOT NULL,
   `namapeminjam` varchar(25) NOT NULL,
   `tanggalpinjam` int(10) NOT NULL,
   `tanggalkembali` int(10) NOT NULL,
   `idruang` varchar(15) NOT NULL,
   `namaruang` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

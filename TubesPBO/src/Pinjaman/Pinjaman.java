@@ -19,7 +19,7 @@ import Menuuser.Menuuser;
  */
 public class Pinjaman extends javax.swing.JFrame {
      private DefaultTableModel model;
-    String noregistrasi,namapeminjam,tanggalpinjam,tanggalkembali,idruang,namaruang;
+     String idpeminjam,namapeminjam,tanggalpinjam,tanggalkembali,idruang,namaruang;
     
     public Pinjaman() {
         initComponents();
@@ -27,7 +27,7 @@ public class Pinjaman extends javax.swing.JFrame {
         
         model = new DefaultTableModel ();
         tabel.setModel(model);
-        model.addColumn("No Registrasi");
+        model.addColumn("ID Peminjam");
         model.addColumn("Nama Peminjam");
         model.addColumn("Tanggal pinjam");
         model.addColumn("Tanggal Kembali");
@@ -47,7 +47,7 @@ public class Pinjaman extends javax.swing.JFrame {
             
             while(res.next()){
                 Object[] obj = new Object[6];
-                obj[0] = res.getString("noregistrasi");
+                obj[0] = res.getString("idpeminjam");
                 obj[1] = res.getString("namapeminjam");
                 obj[2] = res.getString("tanggalpinjam");
                 obj[3] = res.getString("tanggalkembali");
@@ -63,7 +63,7 @@ public class Pinjaman extends javax.swing.JFrame {
     }
     
     public void loadData(){  
-    noregistrasi = e.getText(); 
+    idpeminjam = e.getText(); 
     namapeminjam = f.getText();
     tanggalpinjam = g.getText();
     tanggalkembali = h.getText();
@@ -75,8 +75,8 @@ public class Pinjaman extends javax.swing.JFrame {
     
     try{
         Statement stat = (Statement) Connect.getConnect().createStatement();
-        String sql = "Insert into peminjaman (noregistrasi,namapeminjam,tanggalpinjam,tanggalkembali,idruang,namaruang)"+
-                "values ('"+noregistrasi+"','"+namapeminjam+"','"+tanggalpinjam+"','"+tanggalkembali+"','"+idruang+"','"+namaruang+"')";
+        String sql = "Insert into peminjaman (idpeminjam,namapeminjam,tanggalpinjam,tanggalkembali,idruang,namaruang)"+
+                "values ('"+idpeminjam+"','"+namapeminjam+"','"+tanggalpinjam+"','"+tanggalkembali+"','"+idruang+"','"+namaruang+"')";
         PreparedStatement p = (PreparedStatement) Connect.getConnect().prepareStatement(sql);
         p.executeUpdate();
         getData();
@@ -87,14 +87,14 @@ public class Pinjaman extends javax.swing.JFrame {
     }
     
     public void reset(){
-    noregistrasi = ""; 
+    idpeminjam = ""; 
     namapeminjam = "";
     tanggalpinjam = "";
     tanggalkembali = "";
     idruang = "";
     namaruang = "";
     
-    e.setText(noregistrasi);
+    e.setText(idpeminjam);
     f.setText(namapeminjam);
     g.setText(tanggalpinjam);
     h.setText(tanggalkembali);
