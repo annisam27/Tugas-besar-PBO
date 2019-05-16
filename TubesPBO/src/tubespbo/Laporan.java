@@ -20,7 +20,7 @@ public class Laporan extends javax.swing.JFrame {
      * Creates new form Laporan
      */
     private DefaultTableModel model;
-    String idpeminjam,namapeminjam,tanggalpinjam,tanggalkembali,idruang,namaruang;
+    String idpeminjam,namapeminjam,tanggalpinjam,tanggalkembali,idruangan,status;
     public Laporan() {
         initComponents();
         setLocationRelativeTo(null);
@@ -31,8 +31,8 @@ public class Laporan extends javax.swing.JFrame {
         model.addColumn("Nama Peminjam");
         model.addColumn("Tanggal Pinjam");
         model.addColumn("Tanggal Kembali");
-        model.addColumn("ID Ruang");
-        model.addColumn("Nama Ruang");
+        model.addColumn("ID Ruangan");
+        model.addColumn("Status");
         
         getData();
         
@@ -53,8 +53,8 @@ public class Laporan extends javax.swing.JFrame {
                 obj[1] = res.getString("namapeminjam");
                 obj[2] = res.getString("tanggalpinjam");
                 obj[3] = res.getString("tanggalkembali");
-                obj[4] = res.getString("idruang");
-                obj[5] = res.getString("namaruang");
+                obj[4] = res.getString("idruangan");
+                obj[5] = res.getString("status");
                 
                 model.addRow(obj);
             }

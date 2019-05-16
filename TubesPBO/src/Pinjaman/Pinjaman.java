@@ -19,20 +19,20 @@ import Menuuser.Menuuser;
  */
 public class Pinjaman extends javax.swing.JFrame {
      private DefaultTableModel model;
-     String idpeminjam,namapeminjam,tanggalpinjam,tanggalkembali,idruang,namaruang;
+     String idpeminjam,namapeminjam,tanggalpinjam,tanggalkembali,idruangan,status;
     
     public Pinjaman() {
         initComponents();
         setLocationRelativeTo(null);
         
-        model = new DefaultTableModel ();
+        model = new DefaultTableModel();
         tabel.setModel(model);
         model.addColumn("ID Peminjam");
         model.addColumn("Nama Peminjam");
         model.addColumn("Tanggal pinjam");
         model.addColumn("Tanggal Kembali");
         model.addColumn("ID Ruangan");
-        model.addColumn("Nama Ruangan");
+        model.addColumn("Status");
         getData();
     }
     
@@ -51,8 +51,8 @@ public class Pinjaman extends javax.swing.JFrame {
                 obj[1] = res.getString("namapeminjam");
                 obj[2] = res.getString("tanggalpinjam");
                 obj[3] = res.getString("tanggalkembali");
-                obj[4] = res.getString("idruang");
-                obj[5] = res.getString("namaruang");
+                obj[4] = res.getString("idruangan");
+                obj[5] = res.getString("status");
                 
                 model.addRow(obj);
             }
@@ -67,16 +67,16 @@ public class Pinjaman extends javax.swing.JFrame {
     namapeminjam = f.getText();
     tanggalpinjam = g.getText();
     tanggalkembali = h.getText();
-    idruang = id.getText();
-    namaruang = j.getText();
+    idruangan = id.getText();
+    status = "diproses";
     }
     public void saveData(){
     loadData();
     
     try{
         Statement stat = (Statement) Connect.getConnect().createStatement();
-        String sql = "Insert into peminjaman (idpeminjam,namapeminjam,tanggalpinjam,tanggalkembali,idruang,namaruang)"+
-                "values ('"+idpeminjam+"','"+namapeminjam+"','"+tanggalpinjam+"','"+tanggalkembali+"','"+idruang+"','"+namaruang+"')";
+        String sql = "Insert into peminjaman (idpeminjam,namapeminjam,tanggalpinjam,tanggalkembali,idruangan,status)"+
+                "values ('"+idpeminjam+"','"+namapeminjam+"','"+tanggalpinjam+"','"+tanggalkembali+"','"+idruangan+"','"+status+"')";
         PreparedStatement p = (PreparedStatement) Connect.getConnect().prepareStatement(sql);
         p.executeUpdate();
         getData();
@@ -91,15 +91,13 @@ public class Pinjaman extends javax.swing.JFrame {
     namapeminjam = "";
     tanggalpinjam = "";
     tanggalkembali = "";
-    idruang = "";
-    namaruang = "";
+    idruangan = "";
     
     e.setText(idpeminjam);
     f.setText(namapeminjam);
     g.setText(tanggalpinjam);
     h.setText(tanggalkembali);
-    id.setText(idruang);
-    j.setText(namaruang);
+    id.setText(idruangan);
     
     }
 
@@ -125,13 +123,11 @@ public class Pinjaman extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         e = new javax.swing.JTextField();
         f = new javax.swing.JTextField();
         g = new javax.swing.JTextField();
         h = new javax.swing.JTextField();
         id = new javax.swing.JTextField();
-        j = new javax.swing.JTextField();
         save = new javax.swing.JButton();
         reset = new javax.swing.JButton();
         kembali = new javax.swing.JButton();
@@ -171,9 +167,6 @@ public class Pinjaman extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setText("ID Ruangan");
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel7.setText("Nama Ruangan");
-
         save.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         save.setText("Save");
         save.addActionListener(new java.awt.event.ActionListener() {
@@ -209,14 +202,12 @@ public class Pinjaman extends javax.swing.JFrame {
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 121, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(j, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(id, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(h, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(g, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -238,20 +229,15 @@ public class Pinjaman extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(h, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(kembali)))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(j, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18))
+                        .addComponent(kembali)
+                        .addGap(56, 56, 56))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(102, 102, 102)
+                                .addComponent(save)
+                                .addGap(26, 26, 26)
+                                .addComponent(reset))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addGap(26, 26, 26)
@@ -259,23 +245,24 @@ public class Pinjaman extends javax.swing.JFrame {
                                     .addComponent(jLabel2)
                                     .addComponent(e, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel3)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(f, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel4)
                                     .addComponent(g, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel5))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(102, 102, 102)
-                                .addComponent(save)
-                                .addGap(26, 26, 26)
-                                .addComponent(reset)))
-                        .addGap(106, 106, 106)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel5)
+                                    .addComponent(h, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(66, 66, 66)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -350,14 +337,12 @@ public class Pinjaman extends javax.swing.JFrame {
     private javax.swing.JTextField g;
     private javax.swing.JTextField h;
     private javax.swing.JTextField id;
-    private javax.swing.JTextField j;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton kembali;
