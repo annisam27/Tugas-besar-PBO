@@ -25,7 +25,7 @@ public class lihatruangan extends javax.swing.JFrame {
      * Creates new form lihatruangan
      */
    private DefaultTableModel model;
-    String idruangan, namaruangan, lokasi, keterangan;
+    String idruangan, namaruangan, lokasi, keterangan, statusruangan;
     public lihatruangan() {
         initComponents();
         model = new DefaultTableModel();
@@ -34,6 +34,7 @@ public class lihatruangan extends javax.swing.JFrame {
         model.addColumn("Nama Ruangan");
         model.addColumn("Lokasi");
         model.addColumn("Keterangan");
+        model.addColumn("Status Ruangan");
         getData();
     }
 
@@ -47,11 +48,12 @@ public class lihatruangan extends javax.swing.JFrame {
             ResultSet res = stat.executeQuery(sql);
             
             while(res.next()){
-                Object[] obj = new Object[4];
+                Object[] obj = new Object[5];
                 obj[0] = res.getString("idruangan");
                 obj[1] = res.getString("namaruangan");
                 obj[2] = res.getString("lokasi");
                 obj[3] = res.getString("keterangan");
+                obj[4] = res.getString("statusruangan");
                 
                 model.addRow(obj);
             }

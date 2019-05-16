@@ -198,7 +198,7 @@ public class KelolaPinjaman extends javax.swing.JFrame {
         jLabel1.setText("PENGELOLAAN DAN KONFIRMASI ");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel2.setText("PEMINJAMAN & PENGEMBALIANRUANGAN");
+        jLabel2.setText("PEMINJAMAN & PENGEMBALIAN RUANGAN");
 
         peminjaman.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -318,7 +318,7 @@ public class KelolaPinjaman extends javax.swing.JFrame {
                         .addGap(197, 197, 197)
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(131, 131, 131)
+                        .addGap(135, 135, 135)
                         .addComponent(jLabel2)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
