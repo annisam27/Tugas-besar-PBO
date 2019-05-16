@@ -119,11 +119,11 @@ public class Kelolaruangan extends javax.swing.JFrame {
     loadData();
     try{
         Statement stat = (Statement) Connect.getConnect().createStatement();
-        String sql = "UPDATE datarruangan SET  idruangan = '"+idruangan+"',"
+        String sql = "UPDATE datarruangan SET idruangan = '"+idruangan+"',"
                                             + "namaruangan = '"+ namaruangan+"',"
                                             + "lokasi = '"+lokasi+"',"
                                             + "keterangan = '"+keterangan+"',"
-                                            + "statusruangan = '"+statusruangan+"'";
+                                            + "statusruangan = '"+statusruangan+"' WHERE idruangan = '"+idruangan+"'";
         PreparedStatement p = (PreparedStatement) Connect.getConnect().prepareStatement(sql);
         p.executeUpdate();
         getData();
