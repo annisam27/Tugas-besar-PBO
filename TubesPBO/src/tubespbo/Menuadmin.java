@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package tubespbo;
-import Kelola.KelolaPengembalian;
 import Kelola.KelolaPinjaman;
 import tubespbo.Kelolaruangan;
 import tubespbo.Laporan;
@@ -35,7 +34,6 @@ public class Menuadmin extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         ruangan = new javax.swing.JButton();
         pinjam = new javax.swing.JButton();
-        pengembalian = new javax.swing.JButton();
         laporan = new javax.swing.JButton();
         keluar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -64,14 +62,6 @@ public class Menuadmin extends javax.swing.JFrame {
             }
         });
 
-        pengembalian.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        pengembalian.setText("Kelola Pengembalian");
-        pengembalian.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pengembalianActionPerformed(evt);
-            }
-        });
-
         laporan.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         laporan.setText("Laporan Peminjaman");
         laporan.addActionListener(new java.awt.event.ActionListener() {
@@ -95,7 +85,6 @@ public class Menuadmin extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(pengembalian)
                     .addComponent(pinjam, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ruangan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(keluar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -109,11 +98,9 @@ public class Menuadmin extends javax.swing.JFrame {
                 .addComponent(ruangan)
                 .addGap(56, 56, 56)
                 .addComponent(pinjam)
-                .addGap(59, 59, 59)
-                .addComponent(pengembalian)
-                .addGap(57, 57, 57)
+                .addGap(61, 61, 61)
                 .addComponent(laporan)
-                .addGap(78, 78, 78)
+                .addGap(162, 162, 162)
                 .addComponent(keluar)
                 .addContainerGap(92, Short.MAX_VALUE))
         );
@@ -168,13 +155,6 @@ public class Menuadmin extends javax.swing.JFrame {
         KelolaPinjaman kelolapinjam = new KelolaPinjaman();
         kelolapinjam.setVisible(true);
     }//GEN-LAST:event_pinjamActionPerformed
-
-    private void pengembalianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pengembalianActionPerformed
-        // TODO add your handling code here:
-        dispose();
-        KelolaPengembalian kelola = new KelolaPengembalian();
-        kelola.setVisible(true);
-    }//GEN-LAST:event_pengembalianActionPerformed
 
     private void laporanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_laporanActionPerformed
         // TODO add your handling code here:
@@ -232,7 +212,6 @@ public class Menuadmin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton keluar;
     private javax.swing.JButton laporan;
-    private javax.swing.JButton pengembalian;
     private javax.swing.JButton pinjam;
     private javax.swing.JButton ruangan;
     // End of variables declaration//GEN-END:variables

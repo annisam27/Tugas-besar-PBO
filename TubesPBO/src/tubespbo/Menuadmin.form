@@ -86,7 +86,6 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="pengembalian" min="-2" max="-2" attributes="0"/>
                           <Component id="pinjam" max="32767" attributes="0"/>
                           <Component id="ruangan" alignment="0" max="32767" attributes="0"/>
                           <Component id="keluar" alignment="0" max="32767" attributes="0"/>
@@ -103,11 +102,9 @@
                       <Component id="ruangan" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                       <Component id="pinjam" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                      <Component id="pengembalian" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
                       <Component id="laporan" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="162" max="-2" attributes="0"/>
                       <Component id="keluar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="92" max="32767" attributes="0"/>
                   </Group>
@@ -135,17 +132,6 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pinjamActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="pengembalian">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Kelola Pengembalian"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pengembalianActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="laporan">
