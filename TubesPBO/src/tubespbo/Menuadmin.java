@@ -55,7 +55,7 @@ public class Menuadmin extends javax.swing.JFrame {
         });
 
         pinjam.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        pinjam.setText("Kelola Peminjaman");
+        pinjam.setText("Kelola pinjam dan kembali");
         pinjam.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pinjamActionPerformed(evt);
@@ -96,11 +96,11 @@ public class Menuadmin extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(ruangan)
-                .addGap(56, 56, 56)
+                .addGap(98, 98, 98)
                 .addComponent(pinjam)
-                .addGap(61, 61, 61)
+                .addGap(87, 87, 87)
                 .addComponent(laporan)
-                .addGap(162, 162, 162)
+                .addGap(94, 94, 94)
                 .addComponent(keluar)
                 .addContainerGap(92, Short.MAX_VALUE))
         );
@@ -114,7 +114,7 @@ public class Menuadmin extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE))
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
