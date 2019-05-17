@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2019 at 09:18 PM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.3
+-- Generation Time: May 17, 2019 at 06:12 AM
+-- Server version: 10.1.9-MariaDB
+-- PHP Version: 7.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `login2`
+-- Database: `login`
 --
 
 -- --------------------------------------------------------
@@ -38,8 +36,9 @@ CREATE TABLE `daftar2` (
 --
 
 INSERT INTO `daftar2` (`Username`, `Password`) VALUES
-('dosen', '4567'),
-('mahasiswa', '1234');
+('annisa', '14117046'),
+('hafid', '14117030'),
+('nurul', '14117071');
 
 -- --------------------------------------------------------
 
@@ -78,8 +77,10 @@ CREATE TABLE `datarruangan` (
 --
 
 INSERT INTO `datarruangan` (`idruangan`, `namaruangan`, `lokasi`, `keterangan`, `statusruangan`) VALUES
-('C102', 'AULA', 'Gedung C', 'Kapasitas 100 orang, full AC', 'kosong'),
-('D103', 'LAB PRODI', 'Gedung D', 'Tersedia 50 komputer, full AC', 'kosong');
+('C102', 'AULA', 'Gedung C', 'Kapasitas 200 orang, full AC', 'dipinjam'),
+('D103', 'LAB PRODI', 'Gedung D', 'Tersedia 50 komputer, full AC', 'kosong'),
+('E005', 'Ruang KM ', 'Gedung E', 'tersedia proyektor,ac', 'dipinjam'),
+('E301', 'Aula', 'Gedung E', 'kapasitas 100 orang', 'kosong');
 
 -- --------------------------------------------------------
 
@@ -101,8 +102,10 @@ CREATE TABLE `peminjaman` (
 --
 
 INSERT INTO `peminjaman` (`idpeminjam`, `namapeminjam`, `tanggalpinjam`, `tanggalkembali`, `idruangan`, `status`) VALUES
-('14117046', 'Annisa', '2019-05-04', '2019-05-05', 'D103', 'diproses'),
-('14117071', 'Nurul', '2019-05-02', '2019-05-03', 'C102', 'diproses');
+('14117030', 'hafid', '2019-05-12', '2019-05-13', 'E005', 'sukses'),
+('14117046', 'Annisa', '2019-05-04', '2019-05-05', 'D103', 'selesai'),
+('14117071', 'Nurul', '2019-05-02', '2019-05-03', 'C102', 'diproses'),
+('14117086', 'nurtias', '2019-05-01', '2019-05-02', 'C102', 'sukses');
 
 --
 -- Indexes for dumped tables
@@ -131,7 +134,6 @@ ALTER TABLE `datarruangan`
 --
 ALTER TABLE `peminjaman`
   ADD PRIMARY KEY (`idpeminjam`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
